@@ -4,6 +4,7 @@ const axios = require('axios');
 const https = require('https');
 const dotenv = require('dotenv');
 dotenv.config();
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 // Add these lines to parse JSON and URL-encoded bodies
@@ -78,4 +79,4 @@ res.status(response.status).json(response.data);
 }
 })  
 
-app.listen(4000, () => console.log('Proxy server running on http://localhost:4000'));
+app.listen(PORT, () => console.log(`Proxy server running on http://localhost:${PORT}`));
